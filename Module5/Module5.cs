@@ -2,127 +2,60 @@
 
 class MainClass
 {
-    static void Main(string[] args)
+
+    static void ShowColor()
     {
-        Console.WriteLine("Цикл for");
+        Console.WriteLine("Напишите свой любимый цвет на английском с маленькой буквы");
+        var color = Console.ReadLine();
 
-        for (int i = 0; i < 3; i++)
+        switch (color)
         {
-            Console.WriteLine(i);
+            case "red":
+                Console.BackgroundColor = ConsoleColor.Red;
+                Console.ForegroundColor = ConsoleColor.Black;
 
-            Console.WriteLine("Напишите свой любимый цвет на английском с маленькой буквы");
-            var color = Console.ReadLine();
+                Console.WriteLine("Your color is red!");
+                break;
 
-            switch (color)
-            {
-                case "red":
-                    Console.BackgroundColor = ConsoleColor.Red;
-                    Console.ForegroundColor = ConsoleColor.Black;
+            case "green":
+                Console.BackgroundColor = ConsoleColor.Green;
+                Console.ForegroundColor = ConsoleColor.Black;
 
-                    Console.WriteLine("Your color is red!");
-                    break;
+                Console.WriteLine("Your color is green!");
+                break;
+            case "cyan":
+                Console.BackgroundColor = ConsoleColor.Cyan;
+                Console.ForegroundColor = ConsoleColor.Black;
 
-                case "green":
-                    Console.BackgroundColor = ConsoleColor.Green;
-                    Console.ForegroundColor = ConsoleColor.Black;
+                Console.WriteLine("Your color is cyan!");
+                break;
+            default:
+                Console.BackgroundColor = ConsoleColor.Yellow;
+                Console.ForegroundColor = ConsoleColor.Red;
 
-                    Console.WriteLine("Your color is green!");
-                    break;
-                case "cyan":
-                    Console.BackgroundColor = ConsoleColor.Cyan;
-                    Console.ForegroundColor = ConsoleColor.Black;
-
-                    Console.WriteLine("Your color is cyan!");
-                    break;
-                default:
-                    Console.BackgroundColor = ConsoleColor.Yellow;
-                    Console.ForegroundColor = ConsoleColor.Red;
-
-                    Console.WriteLine("Your color is yellow!");
-                    break;
-            }
+                Console.WriteLine("Your color is yellow!");
+                break;
         }
+    }
 
-        Console.WriteLine("Цикл while");
-        int k = 0;
-        while (k < 3)
-        {
-            Console.WriteLine(k);
+     static void Main(string[] args)
+    {
 
-            Console.WriteLine("Напишите свой любимый цвет на английском с маленькой буквы");
-            var color = Console.ReadLine();
+        var (name, age) = ("Евгения", 27);
 
-            switch (color)
-            {
-                case "red":
-                    Console.BackgroundColor = ConsoleColor.Red;
-                    Console.ForegroundColor = ConsoleColor.Black;
+        Console.WriteLine("Мое имя: {0}", name);
+        Console.WriteLine("Мой возраст: {0}", age);
 
-                    Console.WriteLine("Your color is red!");
-                    break;
+        Console.Write("Введите имя: ");
+        name = Console.ReadLine();
+        Console.Write("Введите возрас с цифрами:");
+        age = Convert.ToInt32(Console.ReadLine());
 
-                case "green":
-                    Console.BackgroundColor = ConsoleColor.Green;
-                    Console.ForegroundColor = ConsoleColor.Black;
+        Console.WriteLine("Ваше имя: {0}", name);
+        Console.WriteLine("Ваш возраст: {0}", age);
 
-                    Console.WriteLine("Your color is green!");
-                    break;
-                case "cyan":
-                    Console.BackgroundColor = ConsoleColor.Cyan;
-                    Console.ForegroundColor = ConsoleColor.Black;
+        ShowColor();
 
-                    Console.WriteLine("Your color is cyan!");
-                    break;
-                default:
-                    Console.BackgroundColor = ConsoleColor.Yellow;
-                    Console.ForegroundColor = ConsoleColor.Red;
 
-                    Console.WriteLine("Your color is yellow!");
-                    break;
-            }
-        }
-
-        Console.WriteLine("Цикл do");
-        int t = 0;
-
-        do
-        {
-            Console.WriteLine(t);
-
-            Console.WriteLine("Напишите свой любимый цвет на английском с маленькой буквы");
-            var color = Console.ReadLine();
-
-            switch (color)
-            {
-                case "red":
-                    Console.BackgroundColor = ConsoleColor.Red;
-                    Console.ForegroundColor = ConsoleColor.Black;
-
-                    Console.WriteLine("Your color is red!");
-                    break;
-
-                case "green":
-                    Console.BackgroundColor = ConsoleColor.Green;
-                    Console.ForegroundColor = ConsoleColor.Black;
-
-                    Console.WriteLine("Your color is green!");
-                    break;
-                case "cyan":
-                    Console.BackgroundColor = ConsoleColor.Cyan;
-                    Console.ForegroundColor = ConsoleColor.Black;
-
-                    Console.WriteLine("Your color is cyan!");
-                    break;
-                default:
-                    Console.BackgroundColor = ConsoleColor.Yellow;
-                    Console.ForegroundColor = ConsoleColor.Red;
-
-                    Console.WriteLine("Your color is yellow!");
-                    break;
-            }
-
-        } while (t < 3);
-
-        Console.ReadKey();
     }
 }
