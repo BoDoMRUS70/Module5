@@ -6,9 +6,7 @@ class MainClass
     static void ShowColor()
     {
         Console.WriteLine("Напишите свой любимый цвет на английском с маленькой буквы");
-        var color = Console.ReadLine();
-
-        switch (color)
+        switch (Console.ReadLine())
         {
             case "red":
                 Console.BackgroundColor = ConsoleColor.Red;
@@ -37,6 +35,7 @@ class MainClass
                 break;
         }
     }
+
 
      static void Main(string[] args)
     {
