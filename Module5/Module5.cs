@@ -1,25 +1,25 @@
 ﻿using System;
+
 class Programm
 {
-    public static void Main(string[] args)
+    static void Main(string[] args)
     {
+        Console.WriteLine("Напишите что-то");
 
-        var someName = "Дмитрий";
-        Console.WriteLine(someName);
+        var str = Console.ReadLine();
 
-        GetName(someName);
+        Console.WriteLine("Укажите глубину эха");
 
-        Console.WriteLine(someName);
+        var deep = int.Parse(Console.ReadLine());
 
-        Console.ReadKey();
+        for (int i = 0; i < deep; i++)
+        {
+            Echo(str);
+        }
     }
 
-    static void GetName(string name)
+    static void Echo(string saidword)
     {
-        Console.WriteLine("Введите имя");
-       
-        name = Console.ReadLine();
-
+        Console.WriteLine(saidword);
     }
-
 }
