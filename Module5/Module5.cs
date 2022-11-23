@@ -4,32 +4,27 @@ class Programm
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Напишите что-то");
-        var str = Console.ReadLine();
 
-        Console.WriteLine("Укажите глубину эха");
-        var deep = int.Parse(Console.ReadLine());
-
-        Echo(str, deep);
-
-        Console.ReadKey();
+        //Результат 2 в 3 степени
+        Console.WriteLine(PowerUp(2, 3));
     }
 
-    static void Echo(string saidworld, int deep)
+    static int PowerUp(int N, byte pow)
     {
-        var modif = saidworld;
-
-        if (modif.Length > 2)
+        if (pow == 0)
         {
-            modif = modif.Remove(0, 2);
+            return 1;
         }
-
-        Console.BackgroundColor = (ConsoleColor)deep;
-        Console.WriteLine("..." + modif);
-
-        if (deep > 1)
+        else
         {
-            Echo(modif, deep - 1);
+            if (pow == 1)
+            {
+                return N;
+            }
+            else
+            {
+                return N * PowerUp(N, --pow);
+            }
         }
     }
 }
