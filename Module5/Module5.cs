@@ -5,21 +5,23 @@ class Programm
     static void Main(string[] args)
     {
         Console.WriteLine("Напишите что-то");
-
         var str = Console.ReadLine();
 
         Console.WriteLine("Укажите глубину эха");
-
         var deep = int.Parse(Console.ReadLine());
 
-        for (int i = 0; i < deep; i++)
-        {
-            Echo(str);
-        }
+        Echo(str, deep);
+
+        Console.ReadKey();
     }
 
-    static void Echo(string saidword)
+    static void Echo(string phrase, int deep)
     {
-        Console.WriteLine(saidword);
+        Console.WriteLine(phrase);
+
+        if (deep > 1)
+        {
+            Echo(phrase, deep - 1);
+        }
     }
 }
